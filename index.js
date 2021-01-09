@@ -40,7 +40,7 @@ Thumbor.prototype = {
    */
   setImagePath: function(imagePath) {
     this.imagePath = (imagePath.charAt(0) === '/') ?
-      imagePath.substring(1, imagePath.length) : imagePath;
+      encodeURIComponent(imagePath.substring(1, imagePath.length)) : encodeURIComponent(imagePath);
     return this;
   },
   /**
